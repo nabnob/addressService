@@ -32,7 +32,7 @@ class AddressServiceTest(
         }
     }
 
-    "test post then get"{
+    "test create then get"{
         val body = NewAddressRequest("7701 Metropolis Dr")
         val request: HttpRequest<Any> = HttpRequest.POST("/address/", body)
         client.toBlocking().exchange(request, Argument.of(String::class.java)) should{
